@@ -1,0 +1,18 @@
+digraph DER {
+  graph [rankdir=LR, bgcolor="white", nodesep=0.5, ranksep=0.8, fontname="Arial"];
+  node [shape=record, style="rounded,filled", fillcolor="white", fontname="Arial", fontsize=10];
+  edge [fontname="Arial", fontsize=9];
+
+  ROLES [label="{ROLES|PK id_rol|nombre UNIQUE}"];
+  USUARIOS [label="{USUARIOS|PK id_usuario|FK id_rol|nombre|apellido|email UNIQUE|password_hash|created_at|updated_at}"];
+  ARTISTAS [label="{ARTISTAS|PK id_artista|FK id_usuario UNIQUE|nombre_artistico|biografia|created_at|updated_at}"];
+  GENEROS [label="{GENEROS|PK id_genero|nombre UNIQUE}"];
+  SESIONES [label="{SESIONES|PK id_sesion|FK id_usuario|session_id|ip|user_agent|ultima_actividad}"];
+  PASSWORD_RESETS [label="{PASSWORD_RESETS|PK id_reset|FK id_usuario|token_hash UNIQUE|expira_en|usado}"];
+
+  ROLES -> USUARIOS [label="1:N"];
+  USUARIOS -> ARTISTAS [label="1:0..1"];
+  USUARIOS -> SESIONES [label="1:N"];
+  USUARIOS -> PASSWORD_RESETS [label="1:N"];
+  GENEROS [xlabel="Preparada para RELEASES en Hito 2"];
+}
