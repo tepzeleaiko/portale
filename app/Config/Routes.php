@@ -22,3 +22,10 @@ $routes->post('reset-password/(:segment)', 'Auth::updatePassword/$1');
 $routes->get('perfil', 'Profile::index', ['filter' => 'auth']);
 $routes->post('perfil', 'Profile::update', ['filter' => 'auth']);
 
+// Entidad secundaria: Géneros
+$routes->get('generos', 'Genre::index', ['filter' => 'auth']);
+$routes->get('generos/nuevo', 'Genre::new', ['filter' => 'auth,admin']);
+$routes->post('generos', 'Genre::create', ['filter' => 'auth,admin']);
+$routes->get('generos/editar/(:num)', 'Genre::edit/$1', ['filter' => 'auth,admin']);
+$routes->post('generos/actualizar/(:num)', 'Genre::update/$1', ['filter' => 'auth,admin']);
+$routes->post('generos/eliminar/(:num)', 'Genre::delete/$1', ['filter' => 'auth,admin']);
