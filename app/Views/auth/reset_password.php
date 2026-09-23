@@ -18,8 +18,7 @@
   <header class="site-header">
     <nav class="nav-container" aria-label="Main Navigation">
       <a href="/" class="site-logo" aria-label="PORTALE Home">
-        <img src="/assets/logo_dark.png" alt="PORTALE" class="logo-img logo-dark-img">
-        <img src="/assets/logo_light.png" alt="PORTALE" class="logo-img logo-light-img">
+        <img src="/assets/logo_portal.png" alt="PORTALE" class="logo-portal-emblem">
       </a>
       <ul class="nav-menu">
         <li><a href="/" class="nav-link">Home</a></li>
