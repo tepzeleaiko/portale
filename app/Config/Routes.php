@@ -18,9 +18,10 @@ $routes->post('forgot-password', 'Auth::sendResetLink');
 $routes->get('reset-password/(:segment)', 'Auth::resetPassword/$1');
 $routes->post('reset-password/(:segment)', 'Auth::updatePassword/$1');
 
-// Perfil
+// Perfil privado y público
 $routes->get('perfil', 'Profile::index', ['filter' => 'auth']);
 $routes->post('perfil', 'Profile::update', ['filter' => 'auth']);
+$routes->get('artista/(:num)', 'Profile::artist/$1');
 
 // Entidad secundaria: Géneros
 $routes->get('generos', 'Genre::index', ['filter' => 'auth']);

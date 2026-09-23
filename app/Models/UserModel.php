@@ -10,7 +10,7 @@ class UserModel extends Model
     protected $primaryKey = 'id_usuario';
     protected $returnType = 'array';
     protected $allowedFields = [
-        'id_rol', 'nombre', 'apellido', 'email', 'password_hash'
+        'id_rol', 'nombre', 'apellido', 'email', 'password_hash', 'avatar'
     ];
     protected $useTimestamps = true;
 
