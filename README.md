@@ -67,3 +67,37 @@ Additionally, make sure that the following extensions are enabled in your PHP:
 - json (enabled by default - don't turn it off)
 - [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
 - [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+
+# Portale — Hito 1
+
+Proyecto base para el Hito 1 de Portale, realizado a partir del anteproyecto de Santiago Bustos y Tiziano Fardini.
+
+## Incluye
+- DER y Modelo Relacional normalizado hasta 3FN.
+- Estructura MVC de CodeIgniter 4.
+- Registro, login y logout.
+- Recuperación de contraseña mediante token.
+- Sesiones de usuario.
+- Diferenciación de roles: Artista, Consumidor y Administrador.
+- Perfil básico de usuario/artista.
+- CRUD de Géneros como entidad secundaria.
+- Listado de géneros protegido para usuarios logueados.
+- CRUD de géneros restringido al Administrador.
+- Migraciones y seeders iniciales.
+- Rutas principales en `app/Config/Routes.php`.
+
+## Cómo usar el Hito 1
+1. Crear/configurar la base de datos `portale`.
+2. Configurar `.env` a partir de `.env.example`.
+3. Ejecutar `php spark migrate --all`.
+4. Ejecutar `php spark db:seed Database\\Seeds\\DatabaseSeeder`.
+5. Ejecutar el servidor con `php spark serve`.
+
+## Usuario administrador de prueba
+- Email: `admin@portale.local`
+- Contraseña: `Admin123!`
+
+Cambiar esta contraseña en un entorno real.
+
+## Nota
+La tabla `password_resets` es una tabla técnica de apoyo para la recuperación de contraseña. No representa una entidad del negocio principal. La tabla `sesiones` se incluye para registrar sesiones iniciadas, mientras que la sesión de CodeIgniter también se mantiene en el servidor.
