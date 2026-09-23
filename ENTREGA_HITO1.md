@@ -24,6 +24,7 @@ Incluidos con `password_hash()`, `password_verify()`, sesiones y protección CSR
 CRUD de Géneros. El listado requiere sesión iniciada y las operaciones de alta, edición y baja requieren rol Administrador.
 
 ## Base documental utilizada
-El Hito 1 exige DER, Modelo Relacional normalizado, proyecto CodeIgniter 4/MVC, GitHub, Login/Register y CRUD de una entidad secundaria con listado para usuarios logueados. fileciteturn0file0L10-L36
+El Hito 1 exige DER, Modelo Relacional normalizado, proyecto CodeIgniter 4/MVC, GitHub, Login/Register y CRUD de una entidad secundaria con listado para usuarios logueados.
 
-El diseño se basa en el anteproyecto de Portale, especialmente en usuarios, roles, artistas, géneros y sesiones, y en la priorización del Hito 1. fileciteturn0file1L189-L211
+El diseño se basa en el anteproyecto de Portale, especialmente en usuarios, roles, artistas, géneros y sesiones, y en la priorización del Hito 1.
+
