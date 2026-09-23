@@ -78,10 +78,11 @@ class Auth extends Controller
         ], true);
 
         if ($role['nombre'] === 'Artista') {
+            $nombreArtistico = trim((string) $this->request->getPost('nombre_artistico'));
             (new ArtistModel())->insert([
                 'id_usuario' => $idUsuario,
-                'nombre_artistico' => trim($this->request->getPost('nombre')),
-                'biografia' => '',
+                'nombre_artistico' => $nombreArtistico !== '' ? $nombreArtistico : trim($this->request->getPost('nombre')),
+                'biografia' => trim((string) $this->request->getPost('biografia')),
             ]);
         }
 

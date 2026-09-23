@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PORTALE — Archival Releases & Catalogue</title>
+  <meta name="description" content="Explore independent releases on PORTALE. High-resolution uncompressed master audio directly from creators.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Canvas for Dynamic Diffuse Cursor Light Trail -->
+  <canvas id="cursor-canvas" aria-hidden="true"></canvas>
+
+  <!-- Full-Page Static Fixed Marble Backdrop -->
+  <div id="page-backdrop" aria-hidden="true"></div>
+  <div id="page-overlay" aria-hidden="true"></div>
+
+  <!-- Minimal Navigation Bar -->
+  <header class="site-header">
+    <nav class="nav-container" aria-label="Main Navigation">
+      <a href="/" class="site-logo" aria-label="PORTALE Home">
+        <img src="/assets/logo_dark.png" alt="PORTALE" class="logo-img logo-dark-img">
+        <img src="/assets/logo_light.png" alt="PORTALE" class="logo-img logo-light-img">
+      </a>
+      
+      <ul class="nav-menu">
+        <li><a href="/" class="nav-link">Home</a></li>
+        <li><a href="/marketplace.html" class="nav-link">Marketplace</a></li>
+        <li><a href="/releases.html" class="nav-link active">Releases</a></li>
+        <li><a href="/#philosophy" class="nav-link">Philosophy</a></li>
+        <li>
+          <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle light and dark mode">
+            <span id="themeLabel">[ MODE: DARK ]</span>
+          </button>
+        </li>
+        <li><a href="/register" class="nav-link nav-login" id="navAccountBtn">Register / Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main style="padding-top: 8rem;">
+
+    <!-- Releases Hero Banner -->
+    <section class="catalog-hero-section reveal-on-scroll">
+      <div class="editorial-12-grid">
+        <div class="grid-col-12">
+          <span class="editorial-meta">CATALOGUE DIRECTORY — ALL RELEASES</span>
+          <h1 class="catalog-main-heading">Archival Releases.</h1>
+          <p class="catalog-sub-lead">
+            Explore uncompressed sound art, studio masters, and limited digital pressings directly published by independent artists.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="thin-separator"></div>
+
+    <!-- Featured Master Release Section: Austerity Sonar by Tiziano Fardini -->
+    <section class="featured-release-section reveal-on-scroll">
+      <header class="section-header-editorial">
+        <span class="editorial-meta">FEATURED MASTER RELEASE — PL-006</span>
+        <h2 class="philosophy-main-title">Austerity Sonar</h2>
+        <p class="featured-artist-name">BY TIZIANO FARDINI • 124 BPM • D MINOR</p>
+      </header>
+
+      <div class="editorial-12-grid align-center">
+        <!-- Embedded SoundCloud Player Frame -->
+        <div class="grid-col-7">
+          <div class="soundcloud-player-wrapper">
+            <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay; encrypted-media" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%253Aplaylists%253A2270811809&color=%2348544c&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+            <div style="font-size: 10px; color: #cccccc; line-break: anywhere; word-break: normal; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font-family: 'Inter', sans-serif; font-weight: 300; padding: 0.8rem 1rem; background-color: var(--color-card-bg); border-top: 1px solid var(--color-border);">
+              <a href="https://soundcloud.com/tiziano-fardini" title="Tiziano Fardini" target="_blank" style="color: var(--color-text-primary); text-decoration: none; font-weight: 500;">Tiziano Fardini</a> · <a href="https://soundcloud.com/tiziano-fardini/sets/austerity-sonar" title="Austerity Sonar" target="_blank" style="color: var(--color-text-muted); text-decoration: none;">Austerity Sonar</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Release Metadata & Purchase Actions -->
+        <article class="grid-col-5 featured-meta-box">
+          <span class="catalog-cat">[ CATALOGUE N° PL-006 ]</span>
+          <h3 class="featured-meta-title">Austerity Sonar</h3>
+          <p class="featured-meta-desc">
+            A minimalist sonic exploration of spatial architecture and acoustic restraint. Delivered directly from the artist's studio master environment.
+          </p>
+          <div class="featured-specs-list">
+            <div class="spec-row">
+              <span class="spec-label">ARTIST</span>
+              <span class="spec-val">Tiziano Fardini</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-label">BPM & KEY</span>
+              <span class="spec-val">124 BPM • D Minor (7A)</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-label">AVAILABLE FORMATS</span>
+              <span class="spec-val">WAV 32-bit / 192kHz • FLAC • MP3 320</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-label">OWNERSHIP</span>
+              <span class="spec-val">Direct Creator Support (95/5 Split)</span>
+            </div>
+          </div>
+          <div style="margin-top: 2rem;">
+            <a href="marketplace.html" class="btn-solid btn-full">Acquire in Marketplace Directory</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <div class="thin-separator"></div>
+
+    <!-- Complete Catalog Directory Grid -->
+    <section class="catalog-section reveal-on-scroll">
+      <header class="section-header-editorial">
+        <span class="editorial-meta">ARCHIVAL DIRECTORY — RELEASES PL-001 TO PL-005</span>
+        <h2 class="philosophy-main-title">Full Catalogue</h2>
+      </header>
+
+      <div class="catalog-editorial-grid">
+
+        <!-- Release 01 -->
+        <article class="catalog-item">
+          <figure class="catalog-artwork-container">
+            <img src="./assets/cover1.jpg" alt="PL-001 Architectures of Silence" class="catalog-img">
+          </figure>
+          <div class="catalog-info">
+            <span class="catalog-cat">[ PL-001 ]</span>
+            <h3 class="catalog-title">Architectures of Silence</h3>
+            <span class="catalog-artist">Aura & The Void</span>
+            <div class="catalog-specs-row">
+              <span>WAV 32-bit / 192kHz</span>
+              <span>FLAC</span>
+              <span>MP3 320</span>
+            </div>
+            <button class="btn-solid btn-full preview-btn" data-track="PL-001" data-title="Architectures of Silence">
+              Play Preview [0:30]
+            </button>
+          </div>
+        </article>
+
+        <!-- Release 02 -->
+        <article class="catalog-item">
+          <figure class="catalog-artwork-container">
+            <img src="./assets/cover2.jpg" alt="PL-002 Dark Mineral Frequencies" class="catalog-img">
+          </figure>
+          <div class="catalog-info">
+            <span class="catalog-cat">[ PL-002 ]</span>
+            <h3 class="catalog-title">Dark Mineral Frequencies</h3>
+            <span class="catalog-artist">Monolith Collective</span>
+            <div class="catalog-specs-row">
+              <span>WAV 24-bit / 96kHz</span>
+              <span>FLAC</span>
+              <span>MP3 320</span>
+            </div>
+            <button class="btn-solid btn-full preview-btn" data-track="PL-002" data-title="Dark Mineral Frequencies">
+              Play Preview [0:30]
+            </button>
+          </div>
+        </article>
+
+        <!-- Release 03 -->
+        <article class="catalog-item">
+          <figure class="catalog-artwork-container">
+            <img src="./assets/cover3.jpg" alt="PL-003 Monolith In Echo" class="catalog-img">
+          </figure>
+          <div class="catalog-info">
+            <span class="catalog-cat">[ PL-003 ]</span>
+            <h3 class="catalog-title">Monolith In Echo</h3>
+            <span class="catalog-artist">Kaelen Vance</span>
+            <div class="catalog-specs-row">
+              <span>WAV 32-bit / 192kHz</span>
+              <span>FLAC</span>
+              <span>MP3 320</span>
+            </div>
+            <button class="btn-solid btn-full preview-btn" data-track="PL-003" data-title="Monolith In Echo">
+              Play Preview [0:30]
+            </button>
+          </div>
+        </article>
+
+        <!-- Release 04 -->
+        <article class="catalog-item">
+          <figure class="catalog-artwork-container">
+            <img src="./assets/cover4.jpg" alt="PL-004 Verdant Resonance" class="catalog-img">
+          </figure>
+          <div class="catalog-info">
+            <span class="catalog-cat">[ PL-004 ]</span>
+            <h3 class="catalog-title">Verdant Resonance</h3>
+            <span class="catalog-artist">Elysian Systems</span>
+            <div class="catalog-specs-row">
+              <span>WAV 24-bit / 96kHz</span>
+              <span>FLAC</span>
+              <span>MP3 320</span>
+            </div>
+            <button class="btn-solid btn-full preview-btn" data-track="PL-004" data-title="Verdant Resonance">
+              Play Preview [0:30]
+            </button>
+          </div>
+        </article>
+
+        <!-- Release 05 -->
+        <article class="catalog-item">
+          <figure class="catalog-artwork-container">
+            <img src="./assets/cover5.jpg" alt="PL-005 Polychrome Strata" class="catalog-img">
+          </figure>
+          <div class="catalog-info">
+            <span class="catalog-cat">[ PL-005 ]</span>
+            <h3 class="catalog-title">Polychrome Strata</h3>
+            <span class="catalog-artist">Chronos Synth Suite</span>
+            <div class="catalog-specs-row">
+              <span>WAV 32-bit / 192kHz</span>
+              <span>FLAC</span>
+              <span>MP3 320</span>
+            </div>
+            <button class="btn-solid btn-full preview-btn" data-track="PL-005" data-title="Polychrome Strata">
+              Play Preview [0:30]
+            </button>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Minimal Footer -->
+  <footer class="site-footer">
+    <div class="footer-left">
+      <a href="index.html" class="footer-logo-link" aria-label="PORTALE Home">
+        <img src="./assets/logo_dark.png" alt="PORTALE" class="footer-logo-img logo-dark-img">
+        <img src="./assets/logo_light.png" alt="PORTALE" class="footer-logo-img logo-light-img">
+      </a>
+      <span class="footer-copy">© 2026 PORTALE. SWISS EDITORIAL DESIGN. ALL RIGHTS RESERVED.</span>
+    </div>
+
+    <ul class="footer-menu">
+      <li><a href="/">Home</a></li>
+      <li><a href="/marketplace.html">Marketplace</a></li>
+      <li><a href="/releases.html">Releases</a></li>
+      <li><a href="/#philosophy">Philosophy</a></li>
+      <li><a href="/register">Register</a></li>
+    </ul>
+  </footer>
+
+  <!-- Audio Toast -->
+  <aside class="sound-toast" id="soundToast" aria-live="polite">
+    <div class="toast-indicator"></div>
+    <div class="toast-info">
+      <span class="toast-title" id="toastTitle">Architectures of Silence</span>
+      <span class="toast-sub" id="toastSub">30S AUDIOPHILE PREVIEW ACTIVE</span>
+    </div>
+    <button class="toast-close" id="toastClose" aria-label="Close audio preview">&times;</button>
+  </aside>
+
+  <script src="/main.js"></script>
+</body>
+</html>

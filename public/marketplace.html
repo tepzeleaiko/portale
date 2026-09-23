@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PORTALE — Music Marketplace & Archival Directory</title>
+  <meta name="description" content="Browse and acquire uncompressed independent music releases. Filter by Genre, BPM, Price, and Artist.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Canvas for Dynamic Diffuse Cursor Light Trail -->
+  <canvas id="cursor-canvas" aria-hidden="true"></canvas>
+
+  <!-- Full-Page Static Fixed Marble Backdrop -->
+  <div id="page-backdrop" aria-hidden="true"></div>
+  <div id="page-overlay" aria-hidden="true"></div>
+
+  <!-- Minimal Navigation Bar -->
+  <header class="site-header">
+    <nav class="nav-container" aria-label="Main Navigation">
+      <a href="/" class="site-logo" aria-label="PORTALE Home">
+        <img src="/assets/logo_dark.png" alt="PORTALE" class="logo-img logo-dark-img">
+        <img src="/assets/logo_light.png" alt="PORTALE" class="logo-img logo-light-img">
+      </a>
+      
+      <ul class="nav-menu">
+        <li><a href="/" class="nav-link">Home</a></li>
+        <li><a href="/marketplace.html" class="nav-link active">Marketplace</a></li>
+        <li><a href="/releases.html" class="nav-link">Releases</a></li>
+        <li><a href="/#philosophy" class="nav-link">Philosophy</a></li>
+        <li>
+          <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle light and dark mode">
+            <span id="themeLabel">[ MODE: DARK ]</span>
+          </button>
+        </li>
+        <li><a href="/register" class="nav-link nav-login" id="navAccountBtn">Register / Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main style="padding-top: 8rem; padding-bottom: 10rem;">
+
+    <!-- Marketplace Header Banner -->
+    <section class="marketplace-hero-section reveal-on-scroll">
+      <div class="editorial-12-grid">
+        <div class="grid-col-12">
+          <span class="editorial-meta">ARCHIVAL DIRECTORY — DIRECT MUSIC MARKETPLACE</span>
+          <h1 class="catalog-main-heading">Marketplace.</h1>
+          <p class="catalog-sub-lead">
+            Filter uncompressed independent releases, extended DJ club mixes, and Hi-Fi acoustic masters directly published by creators.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="thin-separator"></div>
+
+    <!-- Filter & Search Controls Panel -->
+    <section class="filter-panel-section reveal-on-scroll">
+      <div class="filter-container">
+        
+        <!-- Search Input -->
+        <div class="filter-group search-group">
+          <label for="marketSearch" class="form-label">SEARCH RELEASE OR ARTIST</label>
+          <input type="text" id="marketSearch" class="form-input" placeholder="Type title or artist name (e.g. Tiziano Fardini, Monolith)...">
+        </div>
+
+        <!-- Filter Selectors Grid -->
+        <div class="filter-controls-grid">
+          
+          <!-- Genre Filter -->
+          <div class="filter-group">
+            <label for="filterGenre" class="form-label">GENRE / STYLE</label>
+            <select id="filterGenre" class="form-select">
+              <option value="all">ALL GENRES</option>
+              <option value="Ambient">AMBIENT / DRONE</option>
+              <option value="Techno">TECHNO / INDUSTRIAL</option>
+              <option value="Deep House">DEEP HOUSE / MINIMAL</option>
+              <option value="Experimental">EXPERIMENTAL SOUND ART</option>
+            </select>
+          </div>
+
+          <!-- BPM Filter -->
+          <div class="filter-group">
+            <label for="filterBpm" class="form-label">BPM RANGE</label>
+            <select id="filterBpm" class="form-select">
+              <option value="all">ALL BPM RANGES</option>
+              <option value="ambient">AMBIENT / NO BPM</option>
+              <option value="low">UNDER 120 BPM</option>
+              <option value="mid">120 – 126 BPM</option>
+              <option value="high">127+ BPM</option>
+            </select>
+          </div>
+
+          <!-- Format Filter -->
+          <div class="filter-group">
+            <label for="filterFormat" class="form-label">AUDIO FORMAT</label>
+            <select id="filterFormat" class="form-select">
+              <option value="all">ALL FORMATS</option>
+              <option value="WAV 32-bit">WAV 32-bit / 192kHz MASTER</option>
+              <option value="FLAC">FLAC 24-bit LOSSLESS</option>
+              <option value="MP3 320">MP3 320 kbps</option>
+            </select>
+          </div>
+
+          <!-- Sort Order -->
+          <div class="filter-group">
+            <label for="filterSort" class="form-label">SORT BY</label>
+            <select id="filterSort" class="form-select">
+              <option value="default">CATALOGUE NUMBER</option>
+              <option value="price-asc">PRICE: LOW TO HIGH</option>
+              <option value="price-desc">PRICE: HIGH TO LOW</option>
+              <option value="bpm-asc">BPM: LOW TO HIGH</option>
+              <option value="title-asc">TITLE: A TO Z</option>
+            </select>
+          </div>
+
+        </div>
+
+        <!-- Active Filter Counter & Reset Button -->
+        <div class="filter-bar-footer">
+          <span class="editorial-meta" id="resultsCount">SHOWING ALL 8 RELEASES</span>
+          <button type="button" id="resetFiltersBtn" class="btn-solid btn-sm">Reset Filters</button>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="thin-separator"></div>
+
+    <!-- Marketplace Releases Cards Grid -->
+    <section class="marketplace-cards-section reveal-on-scroll">
+      <div id="marketplaceGrid" class="marketplace-cards-grid">
+        <!-- Dynamic Cards rendered via main.js -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Minimal Footer -->
+  <footer class="site-footer">
+    <div class="footer-left">
+      <a href="index.html" class="footer-logo-link" aria-label="PORTALE Home">
+        <img src="./assets/logo_dark.png" alt="PORTALE" class="footer-logo-img logo-dark-img">
+        <img src="./assets/logo_light.png" alt="PORTALE" class="footer-logo-img logo-light-img">
+      </a>
+      <span class="footer-copy">© 2026 PORTALE. SWISS EDITORIAL DESIGN. ALL RIGHTS RESERVED.</span>
+    </div>
+
+    <ul class="footer-menu">
+      <li><a href="/">Home</a></li>
+      <li><a href="/marketplace.html">Marketplace</a></li>
+      <li><a href="/releases.html">Releases</a></li>
+      <li><a href="/register">Register</a></li>
+    </ul>
+  </footer>
+
+  <!-- Audio Toast -->
+  <aside class="sound-toast" id="soundToast" aria-live="polite">
+    <div class="toast-indicator"></div>
+    <div class="toast-info">
+      <span class="toast-title" id="toastTitle">Architectures of Silence</span>
+      <span class="toast-sub" id="toastSub">30S AUDIOPHILE PREVIEW ACTIVE</span>
+    </div>
+    <button class="toast-close" id="toastClose" aria-label="Close audio preview">&times;</button>
+  </aside>
+
+  <script src="/main.js"></script>
+</body>
+</html>
